@@ -1,0 +1,834 @@
+/* ========================================================
+   LocalKart — Shop Local, Support Local
+   College Project: Pure HTML5 & CSS3 Frontend
+   Clean, beginner-friendly, and fully responsive stylesheet
+   ======================================================== */
+
+/* --- 1. Global Reset & Typography --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #212529;
+  background-color: #fafcf9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+/* --- 2. Container Utility --- */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* --- 3. Header & Navigation --- */
+.site-header {
+  background-color: #ffffff;
+  border-bottom: 2px solid #e9ecef;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1b4332;
+}
+
+.brand-logo .logo-badge {
+  background-color: #e76f51;
+  color: #ffffff;
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2d6a4f;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ffffff;
+  background-color: #1b4332;
+}
+
+/* --- 4. Hero Section --- */
+.hero-section {
+  background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+  color: #ffffff;
+  padding: 70px 0 80px;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  max-width: 720px;
+  margin: 0 auto 30px;
+  color: #e8f5e9;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 26px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+  background-color: #e76f51;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #d65a3d;
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: #1b4332;
+}
+
+.btn-secondary:hover {
+  background-color: #f1f5f2;
+}
+
+.btn-outline {
+  border: 2px solid #1b4332;
+  color: #1b4332;
+  background-color: transparent;
+}
+
+.btn-outline:hover {
+  background-color: #1b4332;
+  color: #ffffff;
+}
+
+/* --- 5. Sections & Headings --- */
+.section {
+  padding: 60px 0;
+}
+
+.section-light {
+  background-color: #ffffff;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #1b4332;
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: #6c757d;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- 6. Category Badges Grid --- */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.category-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 20px 15px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-3px);
+  border-color: #2d6a4f;
+  background-color: #f4fbf7;
+}
+
+.category-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.category-card h3 {
+  font-size: 1.05rem;
+  color: #1b4332;
+}
+
+/* --- 7. Product Cards Grid --- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.product-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.product-img-wrap {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: #f1f5f2;
+  position: relative;
+}
+
+.product-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-img-wrap img {
+  transform: scale(1.05);
+}
+
+.product-category-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(27, 67, 50, 0.9);
+  color: #ffffff;
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.product-info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-store {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-bottom: 4px;
+}
+
+.product-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1b4332;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.product-price-row {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid #f1f3f5;
+}
+
+.product-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #e76f51;
+}
+
+.view-btn {
+  background-color: #2d6a4f;
+  color: #ffffff;
+  padding: 6px 14px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.view-btn:hover {
+  background-color: #1b4332;
+}
+
+/* --- 8. Store Cards Grid --- */
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.store-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.store-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.store-banner {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background-color: #e9ecef;
+}
+
+.store-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.store-info {
+  padding: 20px;
+}
+
+.store-badge {
+  display: inline-block;
+  background-color: #e8f5e9;
+  color: #1b4332;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+.store-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1b4332;
+  margin-bottom: 8px;
+}
+
+.store-desc {
+  font-size: 0.95rem;
+  color: #555555;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+/* --- 9. Support Local Section --- */
+.why-support {
+  background-color: #eaf4ee;
+  border-radius: 16px;
+  padding: 45px 35px;
+  margin: 20px 0;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.reason-box {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.reason-box h4 {
+  color: #1b4332;
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.reason-box p {
+  color: #555555;
+  font-size: 0.92rem;
+}
+
+/* --- 10. Single Product Details Layout --- */
+.product-detail-card {
+  background-color: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 35px;
+  margin: 30px 0;
+}
+
+.detail-img-box {
+  background-color: #f8faf8;
+  border-radius: 10px;
+  overflow: hidden;
+  max-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-store-link {
+  color: #2d6a4f;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.detail-title {
+  font-size: 2rem;
+  color: #1b4332;
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.detail-price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #e76f51;
+  margin-bottom: 18px;
+}
+
+.detail-desc {
+  font-size: 1.05rem;
+  color: #495057;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.detail-specs {
+  border-top: 1px solid #e9ecef;
+  border-bottom: 1px solid #e9ecef;
+  padding: 16px 0;
+  margin-bottom: 24px;
+}
+
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 0.95rem;
+}
+
+.spec-label {
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.spec-value {
+  color: #1b4332;
+  font-weight: 600;
+}
+
+.demo-notice {
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  margin-top: 16px;
+}
+
+/* --- 11. Individual Store Banner & Details --- */
+.store-header-banner {
+  background: linear-gradient(rgba(27, 67, 50, 0.85), rgba(45, 106, 79, 0.85)), url('../images/store_handloom.jpg') center/cover no-repeat;
+  color: #ffffff;
+  padding: 60px 0;
+  text-align: center;
+  border-radius: 14px;
+  margin-bottom: 40px;
+}
+
+.store-header-banner h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.store-header-banner p {
+  font-size: 1.1rem;
+  max-width: 650px;
+  margin: 0 auto;
+  color: #e8f5e9;
+}
+
+/* --- 12. About & Contact Pages --- */
+.content-box {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 40px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  margin: 30px 0;
+}
+
+.content-box h2 {
+  color: #1b4332;
+  font-size: 1.7rem;
+  margin: 25px 0 12px;
+}
+
+.content-box h2:first-child {
+  margin-top: 0;
+}
+
+.content-box p {
+  color: #495057;
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 40px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: #1b4332;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #495057;
+  background-color: #ffffff;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #2d6a4f;
+  box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-info-panel {
+  background-color: #f4fbf7;
+  border: 1px solid #d8f3dc;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.contact-info-panel h3 {
+  color: #1b4332;
+  font-size: 1.3rem;
+  margin-bottom: 18px;
+}
+
+.info-item {
+  margin-bottom: 16px;
+}
+
+.info-item strong {
+  display: block;
+  color: #2d6a4f;
+  font-size: 0.95rem;
+}
+
+.info-item span {
+  color: #495057;
+  font-size: 1rem;
+}
+
+/* --- 13. Footer --- */
+.site-footer {
+  background-color: #1b4332;
+  color: #ffffff;
+  padding: 50px 0 20px;
+  margin-top: auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 30px;
+  margin-bottom: 35px;
+}
+
+.footer-col h4 {
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+  color: #e76f51;
+}
+
+.footer-col p {
+  color: #d8f3dc;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #e8f5e9;
+  font-size: 0.92rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #e76f51;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.88rem;
+  color: #b7e4c7;
+}
+
+/* --- 14. Responsive Media Queries --- */
+@media (max-width: 900px) {
+  .product-detail-card {
+    grid-template-columns: 1fr;
+  }
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-wrapper {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  .hero-content h1 {
+    font-size: 2.1rem;
+  }
+  .hero-content p {
+    font-size: 1.05rem;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================================
+   15. PAGES OUTLINE & MULTI-PAGE DIRECTORY OPTIONS
+   ======================================================== */
+.pages-outline-section {
+  background-color: #ffffff;
+  border-top: 1px solid #e7ede8;
+  border-bottom: 1px solid #e7ede8;
+  padding: 50px 0;
+}
+
+.outline-badge {
+  display: inline-block;
+  background: #e8f5e9;
+  color: #1b4332;
+  border: 1px solid #b7e4c7;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.pages-outline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 22px;
+  margin-top: 24px;
+}
+
+.outline-page-card {
+  background: #fafcf9;
+  border: 1.5px solid #d8f3dc;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  color: inherit;
+  text-decoration: none;
+}
+
+.outline-page-card:hover {
+  background: #ffffff;
+  border-color: #2d6a4f;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(45, 106, 79, 0.12);
+}
+
+.outline-icon-box {
+  font-size: 2.2rem;
+  background: #eef7f0;
+  border: 1px solid #c8ebd1;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.outline-card-body h3 {
+  font-size: 1.2rem;
+  color: #1b4332;
+  margin-bottom: 6px;
+}
+
+.outline-card-body p {
+  font-size: 0.9rem;
+  color: #495057;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.outline-open-link {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #2d6a4f;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f1f8f3;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid #d1ead7;
+  transition: all 0.2s ease;
+}
+
+.outline-page-card:hover .outline-open-link {
+  background: #2d6a4f;
+  color: #ffffff;
+  border-color: #2d6a4f;
+}
+
